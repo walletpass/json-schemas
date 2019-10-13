@@ -19,12 +19,14 @@
     "currencyCode": {
       "title": "Currency Code",
       "description": "ISO 4217 currency code.",
-      "type": "string"
+      "type": "string",
+      "pattern": "^[A-Z]{3,3}$"
     },
     "currencyAmount": {
       "title": "Currency Amount",
       "description": "An ISO 4217 currency code and an amount.",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "currencyCode": { "$ref": "#/definitions/currencyCode" },
         "amount": {
@@ -639,6 +641,7 @@
       "title": "Beacon",
       "description": "Information about a location beacon.",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "major": {
           "title": "Major",
@@ -674,6 +677,7 @@
       "title": "Location",
       "description": "Information about a location.",
       "type": "object",
+      "additionalProperties": false,
       "properties": {
         "altitude": {
           "title": "Altitude",
@@ -683,12 +687,16 @@
         "latitude": {
           "title": "Latitude",
           "description": "Latitude, in degrees, of the location.",
-          "type": "number"
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
         },
         "longitude": {
           "title": "Longitude",
           "description": "Longitude, in degrees, of the location.",
-          "type": "number"
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
         },
         "relevantText": {
           "title": "Relevant Text",
