@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/walletpass/json-schemas#readme",
   "devDependencies": {
-    "ajv": "8.11.2",
+    "ajv": "8.17.1",
     "prettier": "3.5.0"
   }
 }
